@@ -57,12 +57,12 @@ public class ReceiveMail extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_mail = new javax.swing.JTextField();
-        txt_pass = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt_res = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         noti = new javax.swing.JLabel();
+        txt_pass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -190,7 +190,7 @@ public class ReceiveMail extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel noti;
     private javax.swing.JTextField txt_mail;
-    private javax.swing.JTextField txt_pass;
+    private javax.swing.JPasswordField txt_pass;
     private javax.swing.JTextArea txt_res;
     // End of variables declaration//GEN-END:variables
 
@@ -240,8 +240,6 @@ public class ReceiveMail extends javax.swing.JFrame {
             Multipart multipart = (Multipart) message.getContent();
 
             for (int i = 0; i < multipart.getCount(); i++) {
-
-//                BodyPart bodyPart = multipart.getBodyPart(i);
                 MimeBodyPart bodyPart = (MimeBodyPart) multipart.getBodyPart(i);
 
                 System.out.println(bodyPart.getContentType());
@@ -257,18 +255,6 @@ public class ReceiveMail extends javax.swing.JFrame {
                     bodyPart.saveFile(file);
                     txt_res.append("File " + file.getName() + " đã được tải vào đường dẫn: \n");
                     txt_res.append(file.getAbsolutePath() + "\n");
-
-//                    FileOutputStream output = new FileOutputStream(file.getAbsolutePath());
-//
-//                    byte[] buffer = new byte[4096];
-//
-//                    int byteRead;
-//
-//                    while ((byteRead = input.read(buffer)) != -1) {
-//                        output.write(buffer, 0, byteRead);
-//                    }
-//                    output.close();
-                    
                 } else {
                     System.out.println(bodyPart.getContent().toString());
                     txt_res.append("Nội dung mail: " + bodyPart.getContent().toString() + "\n");
@@ -329,8 +315,6 @@ public class ReceiveMail extends javax.swing.JFrame {
             Multipart multipart = (Multipart) message.getContent();
 
             for (int i = 0; i < multipart.getCount(); i++) {
-
-//                BodyPart bodyPart = multipart.getBodyPart(i);
                 MimeBodyPart bodyPart = (MimeBodyPart) multipart.getBodyPart(i);
 
                 System.out.println(bodyPart.getContentType());

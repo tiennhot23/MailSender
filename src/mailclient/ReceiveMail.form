@@ -100,8 +100,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txt_mail">
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_pass">
-    </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -135,6 +133,8 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Vui l&#xf2;ng ch&#x1edd; trong &#xed;t ph&#xfa;t n&#x1ebf;u t&#x1ea3;i nhi&#x1ec1;u file."/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="txt_pass">
     </Component>
   </SubComponents>
 </Form>
